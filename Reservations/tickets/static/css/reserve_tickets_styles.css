@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #fff;
+    color: blue ;
+    border: 2px solid green;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    color:#fff;
+    border:none;
+}
+.total-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #green;
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    border: 2px solid green;
+    border-radius: 8px;
+    background-color: #f0faff; /* Light blue background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>{% block title %}Event Management{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Event List</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+     {% include 'events/navbar.html' %}
+      {% block content %}
+         <div class="container">
+        <h1>Events</h1>
+        <ul class="event-list">
+            {% for event in events %}
+                <li class="event-item">
+                    <div class="event-title">
+                        <h3 class="event-title">{{ event.title }}</h3>
+                    </div>
+                    <div class="event-actions">
+                        <a href="{% url 'event_detail' event.id %}" class="effect effect-5">Details</a>
+                        <a href="{% url 'reserve_tickets' event.id %}" class="effect effect-5">Reservation</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+      {% endblock %}
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

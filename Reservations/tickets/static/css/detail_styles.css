@@ -1,0 +1,155 @@
+/* Reset default margin and padding */
+@tailwind base;
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #cee3de;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position:relative;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #007bff;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+h1:hover::after {
+    width: 150px;
+}
+
+.event-info {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.event-info p {
+    margin-bottom: 10px;
+    max-height: 20px; /* Limit to one line */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: max-height 0.3s ease;
+}
+
+.event-info:hover p {
+    max-height: none; /* Show full text on hover */
+}
+
+.event-info span {
+    font-weight: bold;
+}
+
+.event-action {
+
+    text-align: right;
+    margin-top: 20px;
+
+}
+.button-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+}
+
+.button-container .effect {
+            flex:1;/* Allow buttons to grow and shrink within the container */
+            margin-right: 15px; /* Add spacing between buttons */
+}
+
+
+/*
+    Button styles using scc and FontAwesome
+    Class name : class="effect effect-5"
+*/
+.effect {
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  border:none;
+  text-transform: capitalize;
+  background-color: #22A699;
+  font: {
+    family: 'Roboto', sans-serif; /* put your font-family */
+    size: 18px;
+  }
+  padding: 20px 0px;
+  width: 170px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.effect.effect-5 {
+  transition: all 0.2s linear 0s;
+
+  &:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: inline-block;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 30px;
+    background-color: rgba(#fff,0.3);
+    border-radius: 0 50% 50% 0;
+    transform: scale(0,1);
+    transform-origin: left center;
+    transition: all 0.2s linear 0s;
+  }
+
+   &:hover {
+    text-decoration: none;
+    text-indent: 30px;
+    background-color: #003C43;
+    color : #fff;
+    text-align:center;
+
+
+    &:before {
+      text-decoration: none;
+      transform: scale(1,1);
+      text-indent: 0;
+      color : #fff;
+    }
+  }
+}
+
