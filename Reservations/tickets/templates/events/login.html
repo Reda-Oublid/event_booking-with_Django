@@ -9,14 +9,14 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/log_styles.css' %}">
 </head>
 <body>
-    <form method="POST">
-        <h1>Login</h1>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Login</button>
-        <div class="signup-link">
-            <a href="{% url 'signup' %}">Don't have an account? Sign up</a>
-        </div>
-    </form>
+<form method="POST">
+    <h1>Login</h1>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Login!</button>
+    <div class="signup-link">
+        <a href="{% url 'signup' %}">Don't have an account? Sign up</a>
+    </div>
+</form>
 </body>
 </html>
