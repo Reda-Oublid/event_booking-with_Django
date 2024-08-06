@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #d0a963;
+    background-image: url(../assets/lake-mountains-rocks-sunrise-daylight-scenery-illustration-1920x1080-3773.jpg);
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,7 +10,8 @@ body {
 }
 
 form {
-    background-color: #8ab6ec;
+    background-color: rgba(0, 0, 3, 0.65);
+    color: #dddddd;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -23,10 +24,12 @@ h1 {
 
 input[type="text"],
 input[type="password"] {
+    color: aliceblue;
+    background-color: transparent;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(33, 108, 16, 0.72);
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -38,10 +41,11 @@ input[type="password"] {
 }
 
 .signup-link a {
-    color: #007bff;
-    text-decoration: none;
+    color: #ffffff;
+    text-decoration: underline white;
 }
 
 .signup-link a:hover {
     text-decoration: underline;
+    color: chartreuse;
 }
