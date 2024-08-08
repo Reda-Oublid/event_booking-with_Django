@@ -13,7 +13,7 @@ h1 {
 form {
     max-width: 400px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: rgba(61, 52, 52, 0.81);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -29,14 +29,19 @@ input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #251b1b;
     border-radius: 4px;
     box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+input[type="number"]:hover {
+    border: 3px solid navy;
 }
 
 button[type="submit"] {
     background-color: #fff;
-    color: blue ;
+    color: blue;
     border: 2px solid green;
     padding: 12px 20px;
     border-radius: 4px;
@@ -46,13 +51,14 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #0056b3;
-    color:#fff;
-    border:none;
+    color: #fff;
+    border: none;
 }
+
 .total-price {
     font-size: 20px;
     font-weight: bold;
-    color: #green;
+    color: green;
     margin-top: 20px;
     text-align: center;
     padding: 15px;

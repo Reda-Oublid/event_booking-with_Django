@@ -5,18 +5,19 @@
 /* Global Body Styles */
 body {
     /* Background Image and Colors */
-    background-image: url('../assets/colorful-skull-ai-5120x2880-15999.png');
-    background-size: cover;
+    /*background-image: url('../assets/6481667_925.jpg');*/
+    background-image: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+    /*background-color: #021526;*/
     background-position: center;
     background-repeat: no-repeat;
-    color: #333; /* Text color */
+    color: #d9d1d1; /* Text color */
     font-family: 'Arial', sans-serif;
 }
 
 /*Title Styles */
 h1 {
     font-size: 3em;
-    color: #333;
+    color: #ffffff;
     text-align: center;
     margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -31,7 +32,7 @@ h1::after {
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background-color: #007bff;
+    background-color: #d3d0c1;
     border-radius: 2px;
     transition: width 0.3s ease;
 }
@@ -39,14 +40,16 @@ h1::after {
 h1:hover::after {
     width: 150px;
 }
+
 /* Container Styles */
 .container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff; /* White container background */
+    max-width: 75%;
+    margin: 20px 70px;
+    padding: 20px 50px 20px 15px;
+    border: 3px solid #20daaf;
+    background-color: rgba(37, 66, 72, 0.29); /* White container background */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    box-shadow: 0 6px 8px rgba(84, 213, 204, 0.98); /* Subtle box shadow */
 }
 
 /* Event List Styles */
@@ -56,24 +59,25 @@ h1:hover::after {
 }
 
 .event-item {
-    background-color: #fff; /* White background for event items */
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    background-color: rgba(213, 217, 213, 0.93); /* White background for event items */
+    border: 1px solid rgb(2, 16, 19);
+    border-radius: 10px;
     margin-bottom: 15px;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .event-item:hover {
-    background-color: #cee3de;
-     cursor: pointer;
+    background-color: rgba(213, 217, 213, 0.93);
+    cursor: pointer;
+    border: 4px outset rgb(19, 110, 3);
 }
 
 /* Event Title Styles */
 .event-title {
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: rgb(1, 1, 56);
     margin-bottom: 8px;
 }
 
@@ -83,20 +87,7 @@ h1:hover::after {
 }
 
 /* Button Styles */
-.btn {
-    display: inline-block;
-    background-color: #31a6c4;
-    color: #fff;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
 
-/* Hover Effect for Buttons */
-.btn:hover {
-    background-color: #0056b3; /* Darker color on hover */
-}
 
 /* Additional Fancy Button Styles */
 /*
@@ -106,59 +97,57 @@ h1:hover::after {
 
 
 .effect {
-  padding: 10px 20px;
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  color: #fff;
-  text-transform: capitalize;
-  background-color: #22A699;
-  font: {
-    family: 'Roboto', sans-serif; /* put your font-family */
-    size: 18px;
-  }
-  padding: 20px 0px;
-  width: 150px;
-  border-radius: 10px;
-  overflow: hidden;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    background-color: rgba(42, 76, 82, 0.91);
+    font-family: monospace;
+    font-size: 15px;
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 
 .effect.effect-5 {
-  transition: all 0.2s linear 0s;
-
-  &:before {
-    content: "\f054";
-    font-family: FontAwesome;
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0px;
-    height: 100%;
-    width: 30px;
-    background-color: rgba(#fff,0.3);
-    border-radius: 0 50% 50% 0;
-    transform: scale(0,1);
-    transform-origin: left center;
     transition: all 0.2s linear 0s;
-  }
-
-   &:hover {
-    text-decoration: none;
-    text-indent: 30px;
-    background-color: #003C43;
-    color : #fff;
-
 
     &:before {
-      text-decoration: none;
-      transform: scale(1,1);
-      text-indent: 0;
-      color : #fff;
+        content: "\f054";
+        font-family: FontAwesome;
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 30px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 0 50% 50% 0;
+        transform: scale(0, 1);
+        transform-origin: left center;
+        transition: all 0.2s linear 0s;
     }
-  }
+
+    &:hover {
+        text-decoration: none;
+        text-indent: 30px;
+        background-color: #02966e;
+        color: #fff;
+
+
+        &:before {
+            text-decoration: none;
+            transform: scale(1, 1);
+            text-indent: 0;
+            color: #fff;
+        }
+    }
 }

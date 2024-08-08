@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    position:relative;
+    position: relative;
     max-width: 800px;
     margin: 30px auto;
     padding: 30px;
@@ -74,18 +74,19 @@ h1:hover::after {
     margin-top: 20px;
 
 }
+
 .button-container {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 .button-container .effect {
-            flex:1;/* Allow buttons to grow and shrink within the container */
-            margin-right: 15px; /* Add spacing between buttons */
+    flex: 1; /* Allow buttons to grow and shrink within the container */
+    margin-right: 15px; /* Add spacing between buttons */
 }
 
 
@@ -94,62 +95,57 @@ h1:hover::after {
     Class name : class="effect effect-5"
 */
 .effect {
-  padding: 10px 25px;
-  text-align: center;
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  color: #fff;
-  border:none;
-  text-transform: capitalize;
-  background-color: #22A699;
-  font: {
-    family: 'Roboto', sans-serif; /* put your font-family */
-    size: 18px;
-  }
-  padding: 20px 0px;
-  width: 170px;
-  border-radius: 10px;
-  overflow: hidden;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+    background-color: rgba(42, 76, 82, 0.91);
+    font-family: monospace;
+    font-size: 15px;
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 
 .effect.effect-5 {
-  transition: all 0.2s linear 0s;
-
-  &:before {
-    content: "\f054";
-    font-family: FontAwesome;
-    display: inline-block;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0px;
-    height: 100%;
-    width: 30px;
-    background-color: rgba(#fff,0.3);
-    border-radius: 0 50% 50% 0;
-    transform: scale(0,1);
-    transform-origin: left center;
     transition: all 0.2s linear 0s;
-  }
-
-   &:hover {
-    text-decoration: none;
-    text-indent: 30px;
-    background-color: #003C43;
-    color : #fff;
-    text-align:center;
-
 
     &:before {
-      text-decoration: none;
-      transform: scale(1,1);
-      text-indent: 0;
-      color : #fff;
+        content: "\f054";
+        font-family: FontAwesome;
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 30px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 0 50% 50% 0;
+        transform: scale(0, 1);
+        transform-origin: left center;
+        transition: all 0.2s linear 0s;
     }
-  }
-}
 
+    &:hover {
+        text-decoration: none;
+        text-indent: 30px;
+        background-color: #02966e;
+        color: #fff;
+
+
+        &:before {
+            text-decoration: none;
+            transform: scale(1, 1);
+            text-indent: 0;
+            color: #fff;
+        }
+    }
+}
