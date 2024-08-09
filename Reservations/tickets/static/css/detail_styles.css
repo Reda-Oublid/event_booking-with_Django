@@ -6,7 +6,7 @@ body, html {
 }
 
 body {
-    background-color: #cee3de;
+    background-color: grey;
     color: #333;
     font-family: 'Arial', sans-serif;
 }
@@ -91,12 +91,13 @@ h1:hover::after {
 
 
 /*
-    Button styles using scc and FontAwesome
+    Button styles using css and FontAwesome
     Class name : class="effect effect-5"
 */
 .effect {
     text-align: center;
     display: inline-block;
+    border: none;
     position: relative;
     text-decoration: none;
     color: #fff;
@@ -118,6 +119,7 @@ h1:hover::after {
     &:before {
         content: "\f054";
         font-family: FontAwesome;
+        border: none;
         display: flex;
         text-decoration: none;
         align-items: center;

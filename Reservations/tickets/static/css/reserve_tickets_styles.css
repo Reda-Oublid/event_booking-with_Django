@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: #eac096;
+    color: #030303;
     padding: 20px;
 }
 
@@ -13,14 +13,14 @@ h1 {
 form {
     max-width: 400px;
     margin: 0 auto;
-    background-color: rgba(61, 52, 52, 0.81);
+    background-color: rgba(68, 61, 61, 0.85);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 label {
-    display: block;
+    display: inline;
     margin-bottom: 8px;
     font-weight: bold;
 }
@@ -36,29 +36,21 @@ input[type="number"] {
 }
 
 input[type="number"]:hover {
-    border: 3px solid navy;
+    border: 1px solid green;
 }
 
 button[type="submit"] {
-    background-color: #fff;
-    color: blue;
-    border: 2px solid green;
     padding: 12px 20px;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
 }
 
-button[type="submit"]:hover {
-    background-color: #0056b3;
-    color: #fff;
-    border: none;
-}
 
 .total-price {
     font-size: 20px;
     font-weight: bold;
-    color: green;
+    color: Highlight;
     margin-top: 20px;
     text-align: center;
     padding: 15px;
