@@ -11,8 +11,8 @@ body {
     /*background-color: #021526;*/
     background-position: center;
     background-repeat: no-repeat;
-    color: #d9d1d1; /* Text color */
-    font-family: 'Arial', sans-serif;
+    color: #050505; /* Text color */
+    font-family: monospace, sans-serif;
 }
 
 /*Title Styles */
@@ -45,12 +45,12 @@ h1:hover::after {
 /* Container Styles */
 .container {
     max-width: 75%;
-    margin: 20px 70px;
+    margin: 20px auto;
     padding: 20px 50px 20px 15px;
     border: 3px solid #172121;
     background-color: rgba(215, 217, 218, 0.88); /* White container background */
     border-radius: 10px;
-    box-shadow: 0 6px 8px rgba(33, 108, 16, 0.72); /* Subtle box shadow */
+    box-shadow: 0 6px 8px rgba(119, 43, 229, 0.98); /* Subtle box shadow */
 }
 
 /* Event List Styles */
@@ -84,6 +84,8 @@ h1:hover::after {
 /* Event Actions Styles */
 .event-actions {
     text-align: right;
+
+
 }
 
 /* Button Styles */
@@ -91,7 +93,7 @@ h1:hover::after {
 
 /* Additional Fancy Button Styles */
 /*
-    Button styles using scc and FontAwesome
+    Button styles using css and FontAwesome
     Class name : class="effect effect-5"
 */
 
@@ -111,6 +113,7 @@ h1:hover::after {
     width: 150px;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -151,3 +154,25 @@ h1:hover::after {
         }
     }
 }
+
+.delete-event {
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    color: #ffffff;
+    background-color: rgba(42, 76, 82, 0.91);
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    height: 40px;
+    width: 55px;
+
+
+}
+
+.delete-event:hover {
+    background-color: #eb3d49;
+    color: #fff;
+}
+

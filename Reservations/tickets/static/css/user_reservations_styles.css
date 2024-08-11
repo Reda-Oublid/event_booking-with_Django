@@ -7,7 +7,7 @@ body {
 
     /*background-color: #f8f9fa; /* Choose a light background color */
     color: #333; /* Choose a suitable text color */
-    font-family: 'Arial', sans-serif;
+    font-family: monospace, sans-serif;
     background-color: #cee3de;
     background-size: cover; /* Cover the entire background with the image */
     background-position: center; /* Center the background image */
@@ -17,9 +17,9 @@ body {
 /*Title Styles */
 h1 {
     font-size: 3em;
-    color: #333;
+    color: #f8f8f8;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px auto;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
 }
@@ -35,6 +35,7 @@ h1::after {
     background-color: #007bff;
     border-radius: 2px;
     transition: width 0.3s ease;
+
 }
 
 h1:hover::after {
@@ -42,12 +43,21 @@ h1:hover::after {
 }
 
 /* Custom styles using Tailwind utility classes */
+.font-ms {
+    font-family: monospace, sans-serif;
+}
+
 .container {
+    margin-top: 25px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.reservations {
+    margin: 40px;
 }
 
 .text-3xl {
@@ -147,18 +157,19 @@ h1:hover::after {
     Button styles using scc and FontAwesome
     Class name : class="effect effect-5"
 */
+
 .effect {
-    padding: 10px 20px;
     text-align: center;
     display: inline-block;
     position: relative;
     text-decoration: none;
     color: #fff;
     text-transform: capitalize;
-    background-color: #22A699;
-    font-family: "Helvetica Neue", monospace;
+    background-color: rgba(42, 76, 82, 0.91);
+    font-family: monospace;
     font-size: 15px;
-    padding: 20px 0px;
+    padding: 10px;
+    height: 40px;
     width: 150px;
     border-radius: 10px;
     overflow: hidden;
@@ -172,14 +183,15 @@ h1:hover::after {
         content: "\f054";
         font-family: FontAwesome;
         display: flex;
+        text-decoration: none;
         align-items: center;
         justify-content: center;
         position: absolute;
         top: 0;
-        left: 0px;
+        left: 0;
         height: 100%;
         width: 30px;
-        background-color: rgba(16, 69, 71, 0.3);
+        background-color: rgba(255, 255, 255, 0.3);
         border-radius: 0 50% 50% 0;
         transform: scale(0, 1);
         transform-origin: left center;
@@ -187,12 +199,17 @@ h1:hover::after {
     }
 
     &:hover {
+        text-decoration: none;
         text-indent: 30px;
-        background-color: #003C43;
+        background-color: #02966e;
+        color: #fff;
+
 
         &:before {
+            text-decoration: none;
             transform: scale(1, 1);
             text-indent: 0;
+            color: #fff;
         }
     }
 }

@@ -1,8 +1,21 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #eac096;
-    color: #030303;
-    padding: 20px;
+    font-family: monospace, sans-serif;
+    color: #ffffff; /* Text color */
+
+}
+
+.container {
+    position: absolute;
+    display: block;
+    padding: 40px 55px;
+    margin-left: 10%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 85%;
+    height: 85%;
+    border-radius: 45% 35% 45% 35%;
+    box-shadow: 3px 6px 6px rgb(10, 1, 77);
+    background: linear-gradient(90deg, rgba(10, 1, 77, 0.78) 40%, rgba(65, 25, 143, 0.97) 30%);;
 }
 
 h1 {
@@ -11,9 +24,10 @@ h1 {
 }
 
 form {
+    color: #050505;
     max-width: 400px;
     margin: 0 auto;
-    background-color: rgba(68, 61, 61, 0.85);
+    background-color: rgba(255, 253, 253, 0.91);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -23,6 +37,7 @@ label {
     display: inline;
     margin-bottom: 8px;
     font-weight: bold;
+    color: #050505;
 }
 
 input[type="number"] {
@@ -50,7 +65,7 @@ button[type="submit"] {
 .total-price {
     font-size: 20px;
     font-weight: bold;
-    color: Highlight;
+    color: green;
     margin-top: 20px;
     text-align: center;
     padding: 15px;
@@ -59,3 +74,5 @@ button[type="submit"] {
     background-color: #f0faff; /* Light blue background */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+

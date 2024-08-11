@@ -11,37 +11,39 @@
     <link rel="stylesheet" href="{% static 'css/reserve_tickets_styles.css' %}">
 
 </head>
-<body>
-{% include 'events/navbar.html' %}
-<div class="container">
-    <h1>Reserve Tickets for {{ event.title }}</h1>
 
-    <form id="reservationForm" class="bg-dark " action="{% url 'reserve_tickets' event.id %}" method="post">
-        <div class="form-group">
+<body class="bg-dark">
+    {% include 'events/navbar.html' %}
+    <div class="container">
+        <h1>{{ event.title }} : </h1>
+
+        <form id="reservationForm" class="bg-white " action="{% url 'reserve_tickets' event.id %}" method="post">
+            <div class="form-group">
             {% csrf_token %}
-            <label for="{{ form.num_tickets.id_for_label }}" class="text-white">Number of Tickets:</label>
-            <input type="number" id="numTickets" name="{{ form.num_tickets.html_name }}" onchange="calculateTotal()"
+                <label for="{{ form.num_tickets.id_for_label }}" class="text-dark">Number of Tickets:</label>
+                <input type="number" id="numTickets" name="{{ form.num_tickets.html_name }}" onchange="calculateTotal()"
                    min="1" step="1">
-            <p id="totalPrice" class="total-price">Total Price: 0.00 $</p>
-            <button type="submit" class="btn btn-success">Reserve Tickets</button>
-        </div>
-    </form>
-</div>
+                <p id="totalPrice" class="total-price">Total Price: 0.00 $</p>
+                <button type="submit" class="btn btn-success">book Tickets</button>
+            </div>
+        </form>
+    </div>
+    
 
-<script>
-    function calculateTotal() {
-        const numTicketsInput = document.getElementById('numTickets');
-        const totalPriceParagraph = document.getElementById('totalPrice');
-        const pricePerTicket = {{ event.price }}; // Fetch price per ticket from server-side context
+    <script>
+        function calculateTotal() {
+            const numTicketsInput = document.getElementById('numTickets');
+            const totalPriceParagraph = document.getElementById('totalPrice');
+            const pricePerTicket = {{ event.price }}; // Fetch price per ticket from server-side context
 
-        // Calculate total price based on number of tickets and price per ticket
-        const numTickets = parseInt(numTicketsInput.value);
-        const total = numTickets * pricePerTicket;
+            // Calculate total price based on number of tickets and price per ticket
+            const numTickets = parseInt(numTicketsInput.value);
+            const total = numTickets * pricePerTicket;
 
-        // Update total price display
-        totalPriceParagraph.textContent = `Total Price: ${total.toFixed(2)} $.`;
-    }
-</script>
+            // Update total price display
+            totalPriceParagraph.textContent = `Total Price: ${total.toFixed(2)} $.`;
+        }
+    </script>
 </body>
 </html>
 
