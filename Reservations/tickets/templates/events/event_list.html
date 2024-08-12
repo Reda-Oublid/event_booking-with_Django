@@ -26,13 +26,20 @@
                     <div class="event-actions">
                         <a href="{% url 'event_detail' event.id %}" class="effect effect-5">Details</a>
                         <a href="{% url 'reserve_tickets' event.id %}" class="effect effect-5">Book</a>
-                        <a href="{% url 'confirm_event_delete' event.id %}" class="effect delete-event" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash"></i> <!-- Font Awesome trash icon --></a>
+                        {% if can_delete_event %}
+                            <a href="{% url 'confirm_event_delete' event.id %}" class="effect delete-event" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash "></i> <!-- Font Awesome trash icon --></a>
+                        {% endif %}
+                        {% if can_delete_event %}
+                            <a href="{% url 'update_event' event.id %}" class="effect delete-event" ><i class="fas fa-edit "></i> <!-- Font Awesome update icon --></a>
+                        {% endif %}
                     </div>
                 </li>
             {% endfor %}
         </ul>
         <div class="event-manager">
-            <a href="{% url 'create_event' %}" class="btn btn-success">Add Event</a>
+            {% if can_add_event %}
+                <a href="{% url 'create_event' %}" class="effect delete-event"><i class="fas fa-add "></i></a>
+            {% endif %}
         </div>
     </div>
     {% endblock %}

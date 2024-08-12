@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render
 
 # Create your views here.
@@ -45,9 +45,23 @@ def user_logout(request):
     return redirect('login')
 
 
-# Events Handling
+# Events Handling------------------------->
 @login_required
+@permission_required('tickets.add_event')
 def create_event(request):
+    """
+    This function handles the creation of a new event. It checks if the request method is POST,
+    in which case it processes the form data. If the form is valid, it saves the event and redirects
+    to the event list page. If the request method is not POST, it renders a form for creating a new event.
+
+    Parameters:
+    request (HttpRequest): The request object containing information about the current web request.
+
+    Returns:
+    HttpResponseRedirect or render: If the request method is POST and the form is valid, it returns a
+    redirect to the event list page. If the request method is not POST or the form is not valid, it
+    returns a render of the create_event.html template with the form.
+    """
     if request.method == 'POST':
         form = EventForm(request.POST)
         if form.is_valid():
@@ -61,7 +75,17 @@ def create_event(request):
 @login_required  # Ensure that users are authenticated to access this list.
 def event_list(request):
     events = Event.objects.all()
-    return render(request, 'events/event_list.html', {'events': events})
+    can_add_event = request.user.has_perm('tickets.add_event')
+    can_delete_event = request.user.has_perm('tickets.delete_event')
+    can_change_event = request.user.has_perm('tickets.change_event')
+    context={
+        'events': events,
+        'can_add_event': can_add_event,
+        'can_delete_event': can_delete_event,
+        'can_change_event': can_change_event,  # Add additional permissions
+    }
+
+    return render(request, 'events/event_list.html', context)
 
 
 @login_required
@@ -71,19 +95,25 @@ def event_detail(request, event_id):
 
 
 @login_required
+@permission_required('tickets.change_event')
 def update_event(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     if request.method == 'POST':
         form = EventForm(request.POST, instance=event)
         if form.is_valid():
             form.save()
-            return redirect('event_detail', event_id=event.id)
+            print("Event saved")
+            return redirect('event_list')
+        else:
+            print("Form is invalid")
+            print(form.errors)
     else:
         form = EventForm(instance=event)
     return render(request, 'events/update_event.html', {'form': form, 'event': event})
 
 
 @login_required
+@permission_required('tickets.delete_event')
 def confirm_event_delete(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     reservations = Reservation.objects.filter(event=event)
